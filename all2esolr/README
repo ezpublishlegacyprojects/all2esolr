@@ -1,0 +1,51 @@
+
+GENERAL INFORMATION
+===================
+
+Name:                     all2esolr
+Description:              contains a workflow that re-index entries after
+                          content move for eZ Find / solr
+Author:                   Mark Simon ( all2e GmbH, http://www.all2e.com )
+Mail:                     m.simon@all2e.com
+Date of creation:         June 28th 2011
+Last update:              -
+Version:                  1.0
+
+
+INSTALLATION
+============
+
+(1)  Extract the extension into your extension folder ex:"ezrootdir/extensions"
+
+(3)  Activate the extension by adding the following lines to your
+     siteaccess settings "settings/override/site.ini.append.php":
+
+     [ExtensionSettings]
+     ActiveExtensions[]=all2esolr
+     
+     Remember to clear the cache files after activating the extension.
+
+CONFIGURATION
+=============
+
+To activate the workflow make the following steps in your admin siteaccess:
+
+(1)  Create a workflow.
+     Choose a workflow group or create a new on under /workflow/grouplist
+     Klick on the button New Workflow. Choose a name like "index after move".
+     Add the event "Event/re-index node after being moved"
+     and save that workflow.
+
+(2)  Activate the workflow.
+     At /trigger/list is a new entry named "content move after".
+     Select the new crated workflow and apply changes.
+
+(optional) You may possibly have already added a different workflow to the
+     trigger content move after.
+     In that case you need to use a Multiplexer to handle multiple workflows
+     on one trigger. Please read the documentation to do so.
+
+
+Thank you for using this workflow. If you have any problems, bugs, suggestions
+or any other feedback, please send me a mail to m.simon@all2e.com or leave a
+message on the contribution page on http://projects.ez.no .
